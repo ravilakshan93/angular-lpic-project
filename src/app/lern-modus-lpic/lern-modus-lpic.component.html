@@ -1,0 +1,28 @@
+<h1>Lernmodus</h1>
+
+    <h3>Multiple Choice Questions</h3>
+<div>
+    <button class="big ui blue basic button" (click)="switch('mc')">Multiple Choice Questions</button>
+<div *ngIf="viewState=='mc'|| viewState=='all'">
+        <app-multiple-choice-questions></app-multiple-choice-questions>
+</div>
+
+
+<h3>Single Choice Question</h3>
+<button class="big ui blue basic button" (click)="switch('sc')">Single Choice Questions</button>
+<div *ngIf="viewState=='sc' || viewState=='all'">
+<app-single-choice-questions></app-single-choice-questions>
+</div>
+
+
+
+<h3 >Fill in Questions</h3>
+<button class="big ui blue basic button" (click)="switch('fi')">Fill in Questions</button>
+<div *ngIf="viewState=='fi'|| viewState=='all'">
+    <app-fill-in-questions></app-fill-in-questions> 
+</div>
+
+<h3>All in One</h3>
+<button class="big ui blue basic button" (click)="switch('all')">All</button>
+
+</div>

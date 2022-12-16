@@ -1,0 +1,38 @@
+<button (click)="test(); toggleFillIn(); fillInFirstQuest()">Listen / Einzel anzeigen</button>
+
+
+<div *ngIf="!fillInListe">
+<div class="wrapper" style="white-space: pre-wrap;" *ngIf="currentFillInQuest">
+    ID: {{currentFillInQuest.id}}<br>
+    {{currentFillInQuest.question}}
+
+<div *ngIf="fillInSolution">
+    Correcte Antwort währe:
+    <div>
+        {{currentFillInQuest.solution}}
+    </div>
+
+</div>
+    <button (click)="showFillInPrev()">Prev</button>
+    <button (click)="showFillNext()">Next</button>
+    <button (click)="showFillInSolution()">Solution</button>
+</div>
+
+</div>
+
+
+<!--Listen Anzeigen lassen-->
+<div *ngIf="fillInListe">    
+    <div class="wrapper" style="white-space: pre-wrap;">
+        <div *ngFor="let fillInQuest of fillInQuestions" class="fiq">
+            ID: {{fillInQuest.id}}<br>
+            {{fillInQuest.question}}
+
+            Correcte Antwort währe:
+            <div>
+                {{fillInQuest.solution}}
+            </div>
+
+        </div>
+    </div>
+</div>

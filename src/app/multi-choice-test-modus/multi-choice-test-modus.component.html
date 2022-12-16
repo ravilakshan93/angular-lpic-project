@@ -1,0 +1,59 @@
+<!-- MultipleChoice Fragen für Testmodus -->
+<nav>
+    <button type="button" routerLink="/testModusLpic">Back</button>
+</nav>
+<div>
+    <label for="file">Lives:</label>
+    <progress max="7" value="{{this.questionLives}}"></progress>
+</div>
+<hr>
+<div *ngIf="auswertung == false">
+    <div *ngFor="let multi of mcQuest ">
+        <div *ngIf="multi.id == questionId">
+            <div>Question: {{multi.id}} / {{mcQuest.length}}
+            </div>
+            <br>
+            <div>
+                {{multi.question}}
+            </div>
+            <br><br>
+            <div *ngFor="let ele of multi.allAnswer">
+                <div class="check">
+                    <input type="checkbox" (change)="checkAnswer(ele)" (click)="answerChoosen(ele)"
+                        [checked]="ele.choosen">
+                    {{ele.txt}}
+                </div>
+            </div>
+
+
+            <!-- <div *ngFor="let op of multi.options">
+                <input type="checkbox" (click)="mcSaveAnswer(op,questionId)" [checked]="isChecked(op[0], multi.geAnswer)">{{op}}
+            </div>
+        </div>
+    </div> -->
+
+            <button (click)="prevQuestion(multi.id)" style="margin-left:5%; margin-top: 10px;">Prev</button>
+            <button (click)="nextQuestion(multi)" style="margin-left: 2%; margin-top: 10px;">Next</button>
+            <button (click)="skipQuestion(multi)" style="margin-left: 2%; margin-top: 10px;"> Skip</button>
+            <button (click)="this.clickMethod(0)">PopUp</button>
+            <!-- <button class="openButton" (click)="openPopUp()"><strong>Quit</strong></button>
+-->
+        </div>
+    </div>
+</div>
+
+<div *ngIf="auswertung == true">
+    <h1> MC Questions - Auswertung </h1>
+    <div>
+        Summe korrekt: {{this.rightMc}}
+    </div>
+    <div>
+        Summe geraten: {{this.wrongMc}}
+    </div>
+    <div>
+        Summe Übersprungen: {{this.skippedMc}}
+    </div>
+    
+</div>
+
+<button  [hidden]="this.hidden" routerLink="/lernModusLpic" style="background-color: red;">Zum Lernmodus</button>

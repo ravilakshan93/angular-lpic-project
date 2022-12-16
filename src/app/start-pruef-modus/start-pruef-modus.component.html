@@ -1,0 +1,34 @@
+<h1>Prüfmodus</h1>
+
+<!-- <div *ngFor="let ele of this.questionsAll">
+    {{ele.id}} 
+
+</div> -->
+<div>
+    Question:  {{currentQuestion.id}} {{currentQuestion.newid}} <br>
+    {{currentQuestion.question}} {{currentQuestion.newid}}
+</div>
+
+<div *ngIf="currentQuestion.newid <= 12">
+    <input type="text">
+</div>
+
+
+<!--Multiplechoice-->
+<div *ngIf="currentQuestion.newid > 12 && currentQuestion.newid <=31">
+    {{currentQuestion}}
+</div>
+
+
+
+
+
+<div>
+    {{currentQuestion.allAnswer}}
+</div>
+
+
+
+<button (click)="nextQuestion(currentQuestion)" style="margin-left: 2%; margin-top: 10px;">Next</button>
+<button (click)="prevQuestion()" style="margin-left:5%; margin-top: 10px;">Prev</button>
+

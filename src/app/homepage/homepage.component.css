@@ -1,0 +1,25 @@
+*{
+    text-align: center;
+    background-color: antiquewhite;
+    
+    
+}
+
+
+
+main{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+    background-color: antiquewhite;
+}
+
+.ui button{
+    font-size: 25px;
+}
+
+.linuxBild{
+    margin-left: 20px;
+}
+

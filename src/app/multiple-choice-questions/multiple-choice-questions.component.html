@@ -1,0 +1,47 @@
+<p>multiple-choice-questions works!</p>
+<button (click)="showliste = !showliste">Toggle Liste/Einzel</button>
+<!-- zeige mv einzelfrage -->
+<div *ngIf="!showliste">
+    <div class="wrapper" style="white-space: pre-wrap;">
+
+        ID: {{currentquest.id}} <br>
+        {{currentquest.question}}
+
+        <div *ngFor="let ans of currentquest.options">
+            {{ans}} <br>
+        </div>
+
+    <div *ngIf="showInfo">
+        Correcte Antworten wären:
+            <div *ngFor="let ans of currentquest.solutions">
+                {{ans}} <br>
+            </div>
+    </div>
+    
+        <button (click)="showPrev()">PREV</button>
+        <button (click)="showNext()">NEXT</button><br>
+        <button (click)="toggleShowInfo()">info</button><br>
+    </div>
+</div>
+
+<!-- zeige mc fragenliste -->
+<div *ngIf="showliste">
+    <div class="wrapper" style="white-space: pre-wrap;">
+        <div *ngFor="let quest of mcquestions" class="mc">
+            <!-- <div class="ui fluid vertical buttons"> -->
+
+            ID: {{quest.id}} <br>
+            {{quest.question}}
+
+            <div *ngFor="let ans of quest.options">
+                {{ans}} <br>
+            </div>
+
+            Correcte Antworten wären:
+            <div *ngFor="let ans of quest.solutions">
+                {{ans}} <br>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+</div>

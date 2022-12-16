@@ -1,0 +1,43 @@
+<!-- Fill In fragen für Testmodus-->
+
+<nav>
+    <button type="button" routerLink="/testModusLpic">Back</button>
+</nav>
+
+<div>
+    <label for="Lives"></label>
+    <progress max="7" value="{{this.questionLives}}"></progress>
+</div>
+<hr>
+
+
+<div *ngIf="!auswertung">
+    <!-- <div *ngFor="let fillIn of fiQuest"> -->
+    <!-- <div *ngIf="fillIn.id == questionId"> -->
+    <div>
+        Question: {{ fillIn.id}} <br>
+        {{ fillIn.question}}
+    </div>
+    <br><br>
+    <input type="text" [(ngModel)]="fillIn.answer">
+    <br><br>
+    <button (click)="nextQuestion()">Next</button>
+    <button (click)="prevQuestion()">Prev</button>
+    <button>Skip</button>
+    <!-- </div> -->
+    <!-- </div> -->
+</div>
+
+<div *ngIf="auswertung">
+    <h1>Fillin Questions Auswertung</h1>
+    <div>
+        Anzahl der korrekt Beantwortete Fragen:{{this.rightFi}}
+    </div>
+    <div>
+        Anzahl der falsch (geraten) Beantwortete Fragen:{{this.wrongFi}}
+    </div>
+    <div>
+        Anzahl der Übersprungene Fragen:{{this.skippedFi}}
+    </div>
+</div>
+<button [hidden]="this.hidden" routerLink="/lernModusLpic" style="background-color: red;">Zum Lernmodus</button>

@@ -1,0 +1,64 @@
+<!-- <div *ngIf="!auswertung">
+ Testmodus -->
+<!-- <div *ngIf="questionPool == 0">
+    <div *ngFor="let ele of scquestions">
+        <div *ngIf="ele.id == questionId">
+            {{ele.id}}. {{ele.question}} <br>
+            <div *ngFor="let o of ele.options">
+                <div class="options">
+                    <input type="radio" name="answer" (click)="scSaveAnswer(o.questionId)">
+                    {{o}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- MultipleChoice Fragen für Testmodus -->
+<!-- <div *ngIf="questionPool == 1">
+    <div *ngFor="let multi of mcquestions">
+        <div *ngIf="multi.id == questionId">
+            {{multi.id}}. {{multi.question}}<br>
+            <div *ngFor="let op of multi.options">
+                <input type="checkbox" (click)="mcSaveAnswer(op,questionId)" [checked]="isChecked(op[0], multi.geAnswer)">{{op}}
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- FillIn Fragen für Testmodus -->
+<!-- <div *ngIf="questionPool == 2">
+    <div *ngFor="let fillIn of fiquestions">
+        <div *ngIf="fillIn.id == questionId">
+            {{fillIn.id}}. {{fillIn.question}}<br>
+            <input>
+        </div>
+    </div>
+</div>
+<br> -->
+
+<!--Popup-->
+<!-- <div class="openBtn">
+    <button class="openButton" (click)="openPopUp()"><strong>Quit</strong></button>
+-- <button (click)="info()">Info</button> -->
+    <!-- <button (click)="prevQuestion()" style="margin-left:5%; margin-top: 10px;">Prev</button>
+    <button (click)="nextQuestion()" style="margin-left: 2%; margin-top: 10px;">Next</button> --> 
+
+  <!-- </div>
+  <div class="loginPopup">
+    <div class="formPopup" id="popupForm">
+      <form action="/action_page.php" class="formContainer">
+        <h2>Achtung!</h2>
+            <p>Möchten Sie wirklich den Testmodus beenden?</p>
+        <button type="button" class="btn cancel" (click)="cancelPopUp()">Nein</button>
+        <button type="button" class="btn proceed" routerLink="/testModusLpic">Ja</button>
+      </form>
+    </div>
+  </div>
+</div> --> 
+
+
+
+
+
+

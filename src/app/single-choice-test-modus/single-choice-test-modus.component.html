@@ -1,0 +1,47 @@
+<!-- SingleChoice Fragen für Testmodus -->
+<nav>
+    <button type="button" routerLink="/testModusLpic">Back</button>
+</nav>
+
+<div>
+    <label for="Lives"></label>
+    <progress max="7" value="{{this.questionLives}}"></progress>
+</div>
+<hr>
+<div *ngIf="auswertung == false">
+    <div *ngFor="let singleCh of scQuest">
+        <div *ngIf="singleCh.id == questionId">
+            <div>
+                Question: {{ singleCh.id}} / {{scQuest.length}}
+            </div>
+            <br>
+            <div>
+                {{singleCh.question}}
+            </div>
+            <br><br>
+            <div *ngFor="let options of singleCh.Answer">
+                <div class="radio">
+                    <input type="radio" name="answer"  (change)="radioAnswer(options)" (click)="choosenAnswer(options)" [checked]="options.choosen">
+                    {{options.txt}}
+                </div>
+            </div>
+        <button (click)="prevScQuestion(singleCh.id)" style="margin-left:5%; margin-top: 10px;">Prev</button>
+        <button (click)="nextScQuestion(singleCh)" style="margin-left: 2%; margin-top: 10px;">Next</button>
+        <button (click)="skipScQuestion(singleCh)" style="margin-left: 2%; margin-top: 10px;"> Skip</button>
+    </div>
+    </div>
+</div>
+<div *ngIf="auswertung == true">
+<h1>Single Choice Questions Auswertung</h1>
+<div>
+    Anzahl der korrekt Beantwortete Fragen:{{this.rightSc}}
+</div>
+<div>
+    Anzahl der falsch (geraten) Beantwortete Fragen:{{this.wrongSc}}
+</div>
+<div>
+    Anzahl der Übersprungene Fragen:{{this.skippedSc}}
+</div>
+</div>
+<button  [hidden]="this.hidden" routerLink="/lernModusLpic" style="background-color: red;">Zum Lernmodus</button>
+

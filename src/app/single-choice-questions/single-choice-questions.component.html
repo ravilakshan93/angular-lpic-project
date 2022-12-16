@@ -1,0 +1,48 @@
+    <button (click)="singleShowListe = !singleShowListe">Listen / Einzel anzeigen</button>
+    <!--Einzel Anzeigen lassen-->
+    <div *ngIf="!singleShowListe && currentSingleQuest!= undefined">
+        <div class="wrapper" style="white-space: pre-wrap;" *ngIf="currentSingleQuest.id != undefined">
+            ID: {{currentSingleQuest.id}}<br>
+            {{currentSingleQuest.question}}
+
+            <div *ngFor="let answer of currentSingleQuest.options">
+                {{answer}} <br>
+            </div>
+
+            <div *ngIf="showSolution">
+                Correcte Antworten wäre:
+                <div>
+                    {{currentSingleQuest.solution}} <br>
+                </div>
+
+            </div>
+
+            <button (click)="showPrevSingle()">PREV</button>
+            <button (click)="showNextSingle()">NEXT</button><br>
+            <button (click)="showSingleSolution()">Solution</button><br>
+        </div>
+    </div>
+
+<!--Listen Anzeigen lassen-->
+<div *ngIf="singleShowListe">
+    <div class="wrapper" style="white-space: pre-wrap;">
+        <div *ngFor="let singleQuest of scquestions" class="sc">
+            <!-- <div class="ui fluid vertical buttons"> -->
+
+            ID: {{singleQuest.id}} <br>
+            {{singleQuest.question}}
+
+            <div *ngFor="let answer of singleQuest.options">
+                {{answer}} <br>
+            </div>
+
+            Correcte Antworten wäre:
+            <div>
+                {{singleQuest.solution}} <br>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+</div>
+
+
