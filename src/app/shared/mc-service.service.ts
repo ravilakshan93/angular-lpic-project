@@ -1,43 +1,44 @@
 import { Injectable } from '@angular/core';
-import { AllMcquestion} from './all-mcquestions';
+import { AllMcquestion } from './all-mcquestions';
 import { Answer } from './all-mcquestions';
 
 @Injectable({
   providedIn: 'root'
 })
 export class McServiceService {
-  mcquestions : AllMcquestion[];
+  mcquestions: AllMcquestion[];
 
-  constructor() { 
+  constructor() {
     this.mcquestions = [
       {
         id: 1,
+        marker: "mc",
         question: `Consider the following directory: \n  drwxrwxr-x 2 root sales 4096 Jan 1 15:21 sales.\n Which command ensures new files created within the directory sales are owned by the group sales? (Choose two.)`,
         allAnswer: [
           {
             txt: 'A. chmod g+s sales',
-            choosen : false,
-            right : true
+            choosen: false,
+            right: true
           },
           {
-            txt : 'B. setpol -R newgroup=sales sales',
-            choosen : false,
-            right : false
+            txt: 'B. setpol -R newgroup=sales sales',
+            choosen: false,
+            right: false
           },
           {
-            txt : 'C. chgrp -p sales sales',
-            choosen : false,
-            right : false
+            txt: 'C. chgrp -p sales sales',
+            choosen: false,
+            right: false
           },
           {
-            txt : 'D. chown --persistent *.sales sales',
-            choosen : false,
-            right : false
+            txt: 'D. chown --persistent *.sales sales',
+            choosen: false,
+            right: false
           },
           {
-            txt : 'E. chmod 2775 sales',
-            choosen : false,
-            right : true
+            txt: 'E. chmod 2775 sales',
+            choosen: false,
+            right: true
           }
         ],
         infoText: 'www.google.de',
@@ -45,6 +46,7 @@ export class McServiceService {
       },
       {
         id: 2,
+        marker: "mc",
         question: 'In order to display all currently mounted filesystems, which of the following commands could be used?(Choose two.)',
         allAnswer: [
           {
@@ -79,6 +81,7 @@ export class McServiceService {
       },
       {
         id: 3,
+        marker: "mc",
         question: 'Which of the following statements are true about the boot sequence of a PC using a BIOS? (Choose two.)',
         allAnswer: [
           {
@@ -104,7 +107,7 @@ export class McServiceService {
           {
             txt: 'E  The BIOS is started by loading hardware drivers from secondary storage, such as the hard disk',
             choosen: false,
-            right:false,
+            right: false,
           },
         ],
         infoText: 'www.google.de',
@@ -112,6 +115,7 @@ export class McServiceService {
       },
       {
         id: 4,
+        marker: "mc",
         question: 'What is true regarding UEFI firmware? (Choose two.)',
         allAnswer: [
           {
@@ -130,14 +134,14 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'D. It is stored in a special area within the GPT metadata',
+            txt: 'D. It is stored in a special area within the GPT metadata',
             choosen: false,
             right: false,
           },
           {
-            txt:  'E. It is loaded from a fixed boot disk position',
+            txt: 'E. It is loaded from a fixed boot disk position',
             choosen: false,
-            right:false,
+            right: false,
           },
         ],
         infoText: 'www.google.de',
@@ -145,6 +149,7 @@ export class McServiceService {
       },
       {
         id: 5,
+        marker: "mc",
         question: 'When is the content of the kernel ring buffer reset? (Choose two.)',
         allAnswer: [
           {
@@ -163,14 +168,14 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'D. When the kernel loads a previously unloaded kernel module',
+            txt: 'D. When the kernel loads a previously unloaded kernel module',
             choosen: false,
             right: false,
           },
           {
-            txt:  'E. When the system is shut down or rebooted',
+            txt: 'E. When the system is shut down or rebooted',
             choosen: false,
-            right:true,
+            right: true,
           },
         ],
         infoText: 'www.google.de',
@@ -178,6 +183,7 @@ export class McServiceService {
       },
       {
         id: 6,
+        marker: "mc",
         question: 'Which of the following directories on a 64 bit Linux system typically contain shared libraries? (Choose two.)',
         allAnswer: [
           {
@@ -196,14 +202,14 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'D. /lib64/',
+            txt: 'D. /lib64/',
             choosen: false,
             right: true,
           },
           {
             txt: 'E. /opt/lib64/',
             choosen: false,
-            right:false,
+            right: false,
           },
         ],
         infoText: 'www.google.de',
@@ -211,6 +217,7 @@ export class McServiceService {
       },
       {
         id: 7,
+        marker: "mc",
         question: 'Which of the following files exist in a standard GRUB 2 installation? (Choose two.)',
         allAnswer: [
           {
@@ -229,14 +236,14 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'D. /boot/grub/grub.cfg',
+            txt: 'D. /boot/grub/grub.cfg',
             choosen: false,
             right: true,
           },
           {
-            txt:  'E. /boot/grub/linux/vmlinuz',
+            txt: 'E. /boot/grub/linux/vmlinuz',
             choosen: false,
-            right:false,
+            right: false,
           },
         ],
         infoText: 'www.google.de',
@@ -244,6 +251,7 @@ export class McServiceService {
       },
       {
         id: 8,
+        marker: "mc",
         question: 'Which of the following properties of a Linux system should be changed when a virtual machine is cloned? (Choose two.)',
         allAnswer: [
           {
@@ -252,7 +260,7 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'B. The file system',
+            txt: 'B. The file system',
             choosen: false,
             right: false,
           },
@@ -262,14 +270,14 @@ export class McServiceService {
             right: true,
           },
           {
-            txt:  'D. The permissions of /root/',
+            txt: 'D. The permissions of /root/',
             choosen: false,
             right: false,
           },
           {
-            txt:  'E. The SSH host keys',
+            txt: 'E. The SSH host keys',
             choosen: false,
-            right:true,
+            right: true,
           },
         ],
         infoText: 'www.google.de',
@@ -278,6 +286,7 @@ export class McServiceService {
       },
       {
         id: 9,
+        marker: "mc",
         question: 'What is true regarding the configuration of yum? (Choose two.)',
         allAnswer: [
           {
@@ -286,7 +295,7 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'B. Changes to the yum configuration become active after restarting the yumd service',
+            txt: 'B. Changes to the yum configuration become active after restarting the yumd service',
             choosen: false,
             right: false,
           },
@@ -296,14 +305,14 @@ export class McServiceService {
             right: true,
           },
           {
-            txt:  'D. Repository configurations can include variables such as $basearch or $releasever',
+            txt: 'D. Repository configurations can include variables such as $basearch or $releasever',
             choosen: false,
             right: true,
           },
           {
-            txt:  'E. In case /etc/yum.repos.d/ contains files, /etc/yum.config ignored',
+            txt: 'E. In case /etc/yum.repos.d/ contains files, /etc/yum.config ignored',
             choosen: false,
-            right:false,
+            right: false,
           }
         ],
         infoText: 'www.google.de',
@@ -311,6 +320,7 @@ export class McServiceService {
       },
       {
         id: 10,
+        marker: "mc",
         question: 'Which of the following commands list all files and directories within the /tmp/ directory and its subdirectories which are owned by the user root? (Choose two.)',
         allAnswer: [
           {
@@ -319,7 +329,7 @@ export class McServiceService {
             right: true
           },
           {
-            txt:  'B. find -path /tmp -uid root',
+            txt: 'B. find -path /tmp -uid root',
             choosen: false,
             right: false,
           },
@@ -329,21 +339,22 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'D. find /tmp -user root',
+            txt: 'D. find /tmp -user root',
             choosen: false,
             right: true,
           },
           {
             txt: 'E. find -path /tmp -user root -print',
             choosen: false,
-            right:false,
+            right: false,
           }
         ],
-        infoText: 'www.google.de',    
+        infoText: 'www.google.de',
         uebersprungen: false
       },
       {
         id: 11,
+        marker: "mc",
         question: 'Which of the following are valid stream redirection operators within Bash? (Choose two.)',
         allAnswer: [
           {
@@ -352,7 +363,7 @@ export class McServiceService {
             right: true
           },
           {
-            txt:  'B. #>',
+            txt: 'B. #>',
             choosen: false,
             right: false,
           },
@@ -362,14 +373,14 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:   'D. >>>',
+            txt: 'D. >>>',
             choosen: false,
             right: false,
           },
           {
             txt: 'E. 2>&1',
             choosen: false,
-            right:true,
+            right: true,
           }
         ],
         infoText: 'www.google.de',
@@ -377,6 +388,7 @@ export class McServiceService {
       },
       {
         id: 12,
+        marker: "mc",
         question: 'From a Bash shell, which of the following commands directly execute the instructions from the file/usr/local/bin/runme.sh without starting a subshell? (Choose two.)',
         allAnswer: [
           {
@@ -385,7 +397,7 @@ export class McServiceService {
             right: true
           },
           {
-            txt:  'B. /usr/local/bin/runme.sh',
+            txt: 'B. /usr/local/bin/runme.sh',
             choosen: false,
             right: false,
           },
@@ -395,14 +407,14 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:   'D. .  /usr/local/bin/runme.sh',
+            txt: 'D. .  /usr/local/bin/runme.sh',
             choosen: false,
             right: true,
           },
           {
             txt: 'E. run /usr/local/bin/runme.sh',
             choosen: false,
-            right:false,
+            right: false,
           }
         ],
         infoText: 'www.google.de',
@@ -410,6 +422,7 @@ export class McServiceService {
       },
       {
         id: 13,
+        marker: "mc",
         question: 'Which of the following commands can be used to determine how long the system has been running? (Choose two.)',
         allAnswer: [
           {
@@ -418,7 +431,7 @@ export class McServiceService {
             right: true
           },
           {
-            txt:  'B. up',
+            txt: 'B. up',
             choosen: false,
             right: false,
           },
@@ -428,14 +441,14 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:    'D. uname -u',
+            txt: 'D. uname -u',
             choosen: false,
             right: false,
           },
           {
             txt: 'E. top',
             choosen: false,
-            right:true,
+            right: true,
           }
         ],
         infoText: 'www.google.de',
@@ -443,6 +456,7 @@ export class McServiceService {
       },
       {
         id: 14,
+        marker: "mc",
         question: 'Which wildcards will match the following filenames? (Choose two.) ttyS0 ttyS1 ttyS2',
         allAnswer: [
           {
@@ -461,14 +475,14 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'D. tty[A-Z][012]',
+            txt: 'D. tty[A-Z][012]',
             choosen: false,
             right: true,
           },
           {
             txt: 'E. tty[Ss][02]]',
             choosen: false,
-            right:false,
+            right: false,
           }
         ],
         infoText: 'www.google.de',
@@ -476,6 +490,7 @@ export class McServiceService {
       },
       {
         id: 15,
+        marker: "mc",
         question: 'Instead of supplying an explicit device in /etc/fstab for mounting, what other options may be used toidentify the intended partition? (Choose two.)',
         allAnswer: [
           {
@@ -494,14 +509,14 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'D. NAME',
+            txt: 'D. NAME',
             choosen: false,
             right: false,
           },
           {
             txt: 'E. UUID',
             choosen: false,
-            right:true,
+            right: true,
           }
         ],
         infoText: 'www.google.de',
@@ -509,6 +524,7 @@ export class McServiceService {
       },
       {
         id: 16,
+        marker: "mc",
         question: 'Which of the following files are found in the /boot/ filesystem? (Choose two.)',
         allAnswer: [
           {
@@ -527,14 +543,14 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'D. Initial ramdisk images',
+            txt: 'D. Initial ramdisk images',
             choosen: false,
             right: true,
           },
           {
             txt: 'E. fsck binaries',
             choosen: false,
-            right:false,
+            right: false,
           }
         ],
         infoText: 'www.google.de',
@@ -542,6 +558,7 @@ export class McServiceService {
       },
       {
         id: 17,
+        marker: "mc",
         question: 'Which of the following statements are correct when comparing Linux containers with traditional virtual machines (e.g. LXC vs. KVM)? (Choose three.)',
         allAnswer: [
           {
@@ -560,21 +577,22 @@ export class McServiceService {
             right: true,
           },
           {
-            txt:  'D. The guest environment for fully virtualized machines is created by a hypervisor which provides virtual and emulated hardware devices.',
+            txt: 'D. The guest environment for fully virtualized machines is created by a hypervisor which provides virtual and emulated hardware devices.',
             choosen: false,
             right: false,
           },
           {
             txt: 'E. Containers on the same host can use different operating systems, as the container hypervisor creates separate kernel execution.',
             choosen: false,
-            right:false,
+            right: false,
           }
         ],
-          infoText: 'www.google.de',
-          uebersprungen: false
+        infoText: 'www.google.de',
+        uebersprungen: false
       },
       {
         id: 18,
+        marker: "mc",
         question: 'Which of the following commands are valid in the GRUB 2 configuration file? (Choose two.)',
         allAnswer: [
           {
@@ -593,14 +611,14 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'D. insmod',
+            txt: 'D. insmod',
             choosen: false,
             right: true,
           },
           {
             txt: 'E. kpartx',
             choosen: false,
-            right:false,
+            right: false,
           }
         ],
         infoText: 'www.google.de',
@@ -608,6 +626,7 @@ export class McServiceService {
       },
       {
         id: 19,
+        marker: "mc",
         question: 'What can the Logical Volume Manager (LVM) be used for? (Choose three.)',
         allAnswer: [
           {
@@ -621,7 +640,7 @@ export class McServiceService {
             right: true,
           },
           {
-            txt:  'C. To dynamically create or delete logical volumes.',
+            txt: 'C. To dynamically create or delete logical volumes.',
             choosen: false,
             right: true,
           },
@@ -631,16 +650,17 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'E. To encrypt logical volumes.',
+            txt: 'E. To encrypt logical volumes.',
             choosen: false,
-            right:false,
+            right: false,
           }
         ],
-        infoText: 'www.google.de',        
+        infoText: 'www.google.de',
         uebersprungen: false
       },
       {
         id: 20,
+        marker: "mc",
         question: 'What are the main differences between GPT and MBR partition tables regarding maximum number and size of partitions? (Choose two.)',
         allAnswer: [
           {
@@ -649,7 +669,7 @@ export class McServiceService {
             right: false
           },
           {
-            txt:  'B. By default, GPT can manage up to 128 partitions while MBR only supports four primary partitions.',
+            txt: 'B. By default, GPT can manage up to 128 partitions while MBR only supports four primary partitions.',
             choosen: false,
             right: true,
           },
@@ -664,16 +684,17 @@ export class McServiceService {
             right: true,
           },
           {
-            txt:  'E. Both GPT and MBR support up to four primary partitions, each with up to 4096 TB.',
+            txt: 'E. Both GPT and MBR support up to four primary partitions, each with up to 4096 TB.',
             choosen: false,
-            right:false,
+            right: false,
           }
         ],
-         infoText: 'www.google.de',
+        infoText: 'www.google.de',
         uebersprungen: false
       },
       {
         id: 21,
+        marker: "mc",
         question: 'A backup software heavily uses hard links between files which have not been changed in between two backup runs. Which benefits are realized due to these hard links? (Choose two.)',
         allAnswer: [
           {
@@ -682,7 +703,7 @@ export class McServiceService {
             right: false
           },
           {
-            txt:   'B. The backup runs faster because hard links are asynchronous operations, postponing the copy operation to a later point in time.',
+            txt: 'B. The backup runs faster because hard links are asynchronous operations, postponing the copy operation to a later point in time.',
             choosen: false,
             right: false,
           },
@@ -697,7 +718,7 @@ export class McServiceService {
             right: true,
           },
           {
-            txt:  'E. The backup runs faster because, instead of copying the data of each file, hard links only change file system meta data.',
+            txt: 'E. The backup runs faster because, instead of copying the data of each file, hard links only change file system meta data.',
             choosen: false,
             right: true,
           }
@@ -707,6 +728,7 @@ export class McServiceService {
       },
       {
         id: 22,
+        marker: "mc",
         question: 'Running chmod 640 filea.txt as a regular user doesn’t update filea.txt’s permission. What might be a reason why chmod cannot modify the permissions? (Choose two.)',
         allAnswer: [
           {
@@ -715,7 +737,7 @@ export class McServiceService {
             right: true
           },
           {
-            txt:    'B. filea.txt is a symbolic link whose permissions are a fixed value which cannot be changed.',
+            txt: 'B. filea.txt is a symbolic link whose permissions are a fixed value which cannot be changed.',
             choosen: false,
             right: true,
           },
@@ -730,16 +752,17 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'E. filea.txt has the SetUID bit set which imposes the restriction that only the root user can make changes to the file.',
+            txt: 'E. filea.txt has the SetUID bit set which imposes the restriction that only the root user can make changes to the file.',
             choosen: false,
             right: false,
           }
         ],
-        infoText: 'www.google.de',        
+        infoText: 'www.google.de',
         uebersprungen: false
       },
       {
         id: 23,
+        marker: "mc",
         question: 'Which of the following Linux filesystems preallocate a fixed number of inodes when creating a new filesystem instead of generating them as needed? (Choose two.)',
         allAnswer: [
           {
@@ -748,7 +771,7 @@ export class McServiceService {
             right: false
           },
           {
-            txt:    'B. ext3',
+            txt: 'B. ext3',
             choosen: false,
             right: true,
           },
@@ -758,7 +781,7 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'D. ext2',
+            txt: 'D. ext2',
             choosen: false,
             right: true,
           },
@@ -773,6 +796,7 @@ export class McServiceService {
       },
       {
         id: 24,
+        marker: "mc",
         question: 'Which of the following commands can be used to display the inode number of a given file? (Choose two.)',
         allAnswer: [
           {
@@ -791,12 +815,12 @@ export class McServiceService {
             right: true,
           },
           {
-            txt:  'D. cp',
+            txt: 'D. cp',
             choosen: false,
             right: false,
           },
           {
-            txt:  'E. stat',
+            txt: 'E. stat',
             choosen: false,
             right: true,
           }
@@ -806,6 +830,7 @@ export class McServiceService {
       },
       {
         id: 25,
+        marker: "mc",
         question: 'Which of the following commands display the IDs of all processes owned by root? (Choose two.)',
         allAnswer: [
           {
@@ -814,7 +839,7 @@ export class McServiceService {
             right: false
           },
           {
-            txt:  'B. pgrep -u root',
+            txt: 'B. pgrep -u root',
             choosen: false,
             right: true,
           },
@@ -824,7 +849,7 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:'D. pgrep -U 0',
+            txt: 'D. pgrep -U 0',
             choosen: false,
             right: true,
           },
@@ -840,6 +865,7 @@ export class McServiceService {
       },
       {
         id: 26,
+        marker: "mc",
         question: 'Which of the following sequences in the vi editor saves the opened document and exits the editor? (Choose two.),',
         allAnswer: [
           {
@@ -853,7 +879,7 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'C. Esc zz',
+            txt: 'C. Esc zz',
             choosen: false,
             right: false,
           },
@@ -863,7 +889,7 @@ export class McServiceService {
             right: true,
           },
           {
-            txt:  'E. Esc ZZ',
+            txt: 'E. Esc ZZ',
             choosen: false,
             right: true,
           }
@@ -873,6 +899,7 @@ export class McServiceService {
       },
       {
         id: 27,
+        marker: "mc",
         question: 'Which of the following tools can show the complete path of an executable file that the current shell would execute when starting a command without specifying its complete path? (Choose two.)',
         allAnswer: [
           {
@@ -881,7 +908,7 @@ export class McServiceService {
             right: false
           },
           {
-            txt:  'B. pwd',
+            txt: 'B. pwd',
             choosen: false,
             right: false,
           },
@@ -891,7 +918,7 @@ export class McServiceService {
             right: true,
           },
           {
-            txt:  'D. locate',
+            txt: 'D. locate',
             choosen: false,
             right: false,
           },
@@ -906,6 +933,7 @@ export class McServiceService {
       },
       {
         id: 28,
+        marker: "mc",
         question: 'Which of the following commands print the current working directory when using a Bash shell? (Choose two.)',
         allAnswer: [
           {
@@ -929,7 +957,7 @@ export class McServiceService {
             right: true,
           },
           {
-            txt:'E. echo "${pwd}"',
+            txt: 'E. echo "${pwd}"',
             choosen: false,
             right: false,
           }
@@ -939,6 +967,7 @@ export class McServiceService {
       },
       {
         id: 29,
+        marker: "mc",
         question: 'Which of the following statements are correct about the initial RAM disk involved in the boot process of Linux? (Choose two.)',
         allAnswer: [
           {
@@ -952,7 +981,7 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'C. After a successful boot, the initramfs contents are available in /run/initramfs/.',
+            txt: 'C. After a successful boot, the initramfs contents are available in /run/initramfs/.',
             choosen: false,
             right: false,
           },
@@ -962,7 +991,7 @@ export class McServiceService {
             right: true,
           },
           {
-            txt:  'E. An initramfs does not depend on a specific kernel version and is not changed after the initial installation.',
+            txt: 'E. An initramfs does not depend on a specific kernel version and is not changed after the initial installation.',
             choosen: false,
             right: false,
           }
@@ -972,6 +1001,7 @@ export class McServiceService {
       },
       {
         id: 30,
+        marker: "mc",
         question: 'Given the following two symbolic links in a System V init configuration: /etc/rc1.d/K01apache2 /etc/rc2.d/S02apache2 When are the scripts executed that are referenced by these links? (Choose two.)',
         allAnswer: [
           {
@@ -980,7 +1010,7 @@ export class McServiceService {
             right: true
           },
           {
-            txt:  'B. S02apache2 is run when runlevel 2 is left.',
+            txt: 'B. S02apache2 is run when runlevel 2 is left.',
             choosen: false,
             right: false,
           },
@@ -995,7 +1025,7 @@ export class McServiceService {
             right: false,
           },
           {
-            txt:  'E. K01apache2 is run when runlevel 1 is entered.',
+            txt: 'E. K01apache2 is run when runlevel 1 is entered.',
             choosen: false,
             right: true,
           }
@@ -1005,6 +1035,7 @@ export class McServiceService {
       },
       {
         id: 31,
+        marker: "mc",
         question: 'What information can the lspci command display about the system hardware? (Choose three.)',
         allAnswer: [
           {
@@ -1018,7 +1049,7 @@ export class McServiceService {
             right: true,
           },
           {
-            txt:  'C. PCI bus speed',
+            txt: 'C. PCI bus speed',
             choosen: false,
             right: true,
           },
@@ -1039,7 +1070,7 @@ export class McServiceService {
     ]
 
   }
-  getAllMcQuest() : AllMcquestion[]{
+  getAllMcQuest(): AllMcquestion[] {
     return this.mcquestions
   }
 }

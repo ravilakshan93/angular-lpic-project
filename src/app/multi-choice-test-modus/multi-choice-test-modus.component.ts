@@ -50,11 +50,8 @@ export class MultiChoiceTestModusComponent implements OnInit {
     else {
       this.mcAnswer.splice(this.questionPosNr, 1)
     }
-    console.log(this.questionPosNr)
-    console.log(this.mcAnswer)
+
   }
-
-
 
   //Stand 2022-12-15-11-00-refactored
   //Next Question 
@@ -90,8 +87,6 @@ export class MultiChoiceTestModusComponent implements OnInit {
     }
   }
 
-
-
   QuestionCorrectAnswered(quest: AllMcquestion) {
     quest.answered == 0;
     this.questionId++;
@@ -126,10 +121,8 @@ export class MultiChoiceTestModusComponent implements OnInit {
     }
   }
 
-
-
   Info(q: AllMcquestion) {
-    console.log(q);
+ 
   }
 
 
@@ -150,10 +143,8 @@ export class MultiChoiceTestModusComponent implements OnInit {
   // }
 
   isCorrectMc(question: AllMcquestion): boolean {
-    console.log(question);
     let right: boolean = true;
     for (let ele of question.allAnswer) {
-      console.log(ele.txt);
       if ((ele.choosen && !ele.right) || (!ele.choosen && ele.right)) {
         right = false;
       }
@@ -223,7 +214,6 @@ export class MultiChoiceTestModusComponent implements OnInit {
       this.toggleHidden();
     } else if (x == 1) {
       if (confirm("Die Antwort war geraten!")) {
-        console.log("Hier kommt der Code hin der ausgeführt wird wenn das Popup bestätigt wird");
       }
     }
   }

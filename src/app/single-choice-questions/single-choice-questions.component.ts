@@ -21,7 +21,7 @@ export class SingleChoiceQuestionsComponent implements OnInit {
   ngOnInit(): void {
    
   
-    // this.scquestions = this.scService.getAllScQuest();
+        this.scquestions = this.scService.getAllScQuest();
         this.currentSingleQuest = this.scquestions[0];
     }
 

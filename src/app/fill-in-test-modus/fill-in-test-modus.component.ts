@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { element } from 'protractor';
 import { AllFillInQuestions } from '../shared/all-fill-in-questions';
 import { FiServiceService } from '../shared/fi-service.service';
 
@@ -37,6 +38,14 @@ export class FillInTestModusComponent implements OnInit {
     this.fillIn = this.fiQuestions[this.arrayId]
   }
 
+  toggleAuswertung() {
+    //this.updateRight();
+    //this.updateskipped()
+    this.auswertung = !this.auswertung;
+    // this.checkAnswersMc();
+  }
+
+
   nextQuestion() {
     if (this.arrayId < this.fiQuestions.length - 1)
       this.arrayId++
@@ -49,4 +58,16 @@ export class FillInTestModusComponent implements OnInit {
     this.fillIn = this.fiQuestions[this.arrayId]
   }
 
+  skipQuestion(quest: AllFillInQuestions)
+  {
+    quest.Uebersprungen = true;
+    if(quest.id < this.fiQuestions.length){
+      this.questionId++;
+    }else {
+      this.toggleAuswertung();
+    }
+  }
+
 }
+
+

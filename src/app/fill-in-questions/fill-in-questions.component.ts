@@ -50,7 +50,7 @@ export class FillInQuestionsComponent implements OnInit {
     this.fillInSolution = !this.fillInSolution;
   }
 test(){
-  console.log(this.fillInListe)
+
 }
 
 }

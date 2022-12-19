@@ -13,9 +13,12 @@
 
     <div *ngIf="showInfo">
         Correcte Antworten wären:
-            <div *ngFor="let ans of currentquest.solutions">
-                {{ans}} <br>
+           <div *ngFor="let ele of this.currentquest.allAnswer">
+            <div *ngIf="ele.right == true">
+                {{ele.txt}}
             </div>
+
+           </div>
     </div>
     
         <button (click)="showPrev()">PREV</button>

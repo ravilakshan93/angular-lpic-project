@@ -11,9 +11,12 @@
 
             <div *ngIf="showSolution">
                 Correcte Antworten wäre:
-                <div>
-                    {{currentSingleQuest.solution}} <br>
-                </div>
+                <div *ngFor="let ele of this.currentSingleQuest.Answer">
+                    <div *ngIf="ele.right == true">
+                        {{ele.txt}}
+                    </div>
+        
+                   </div>
 
             </div>
 

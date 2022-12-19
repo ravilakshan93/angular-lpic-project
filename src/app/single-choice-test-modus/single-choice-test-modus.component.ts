@@ -51,8 +51,7 @@ export class SingleChoiceTestModusComponent implements OnInit {
     else {
       this.scAnswer.splice(this.questionPosNr, 1)
     }
-    console.log(this.questionPosNr)
-    console.log(this.scAnswer)
+  
   }
 
   //Next Question Single Choice Fragen
@@ -119,13 +118,9 @@ export class SingleChoiceTestModusComponent implements OnInit {
       }
     }
   }
-
-
   isCorrectSc(question: AllScQuestions): boolean {
-    console.log(question);
     let correct: boolean = true;
     for (let ele of question.Answer) {
-      console.log(ele.txt);
       if ((ele.choosen && !ele.right) || (!ele.choosen && ele.right)) {
         correct = false;
       }
@@ -180,7 +175,6 @@ export class SingleChoiceTestModusComponent implements OnInit {
       this.toggleHidden();
     } else if (y == 1) {
       if (confirm("Die Antwort war geraten!")) {
-        console.log("Hier kommt der Code hin der ausgeführt wird wenn das Popup bestätigt wird");
       }
     }
   }

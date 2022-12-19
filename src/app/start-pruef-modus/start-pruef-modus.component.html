@@ -1,34 +1,59 @@
 <h1>Prüfmodus</h1>
 
-<!-- <div *ngFor="let ele of this.questionsAll">
-    {{ele.id}} 
+<!--Der Prüfmodus wird abgebrochen wenn er mehr als 20% Fragen falsch beantwortet-->
 
-</div> -->
-<div>
-    Question:  {{currentQuestion.id}} {{currentQuestion.newid}} <br>
-    {{currentQuestion.question}} {{currentQuestion.newid}}
+
+<!--Auswertung von alle 120 Fragen, Anzahl der bewusste, Anzahl der Unbewusste und Anzahl der Übersprungende  -->
+<div *ngIf="auswertung == false">
+
+    <!--Fill in Fragen -->
+    <div>
+        Question: {{this.arrayIndexOfAllQuestions + 1}} <br>
+        {{currentQuestion.question}}
+    </div>
+
+    <div *ngIf="currentQuestion.marker == 'fi'">
+        <input type="text" [(ngModel)]="currentQuestion.answer">
+    </div>
+    <!--Ende Fill in Fragen-->
+
+    <!--Multiplechoice Fragen-->
+    <div *ngIf="currentQuestion.marker == 'mc'">
+        <div *ngFor="let ele of currentQuestion.allAnswer">
+            <div class="check">
+                <input type="checkbox" (change)="checkAnswer(ele)" (click)="answerChoosen(ele)" [checked]="ele.choosen">
+                {{ele.txt}}
+            </div>
+        </div>
+    </div>
+    <!--Ende Multiplechoice Fragen-->
+
+    <!--SingleChoice Fragen-->
+    <div *ngIf="currentQuestion.marker == 'sc'">
+
+        <div *ngFor="let options of currentQuestion.Answer">
+            <div class="radio">
+                <input type="radio" name="answer" (change)="radioAnswer(options)" (click)="choosenAnswer(options)"
+                    [checked]="options.choosen">
+                {{options.txt}}
+            </div>
+        </div>
+    </div>
+    <!--Ende SingleChoice Fragen-->
+
+    <button (click)="nextQuestion(currentQuestion)" style="margin-left: 2%; margin-top: 10px;">Next</button>
+    <button (click)="prevQuestion()" style="margin-left:5%; margin-top: 10px;">Prev</button>
+    <button (click)="skipQuestion(currentQuestion)" style="margin-left:5%; margin-top: 10px;">Skip</button>
 </div>
-
-<div *ngIf="currentQuestion.newid <= 12">
-    <input type="text">
+<div *ngIf="auswertung == true">
+    <h1> Ihre LPIC - Auswertung </h1>
+    <div>
+        Summe korrekt: {{this.rightAnswer}}
+    </div>
+    <div>
+        Summe geraten: {{this.wrongAnswer}}
+    </div>
+    <div>
+        Summe Übersprungen: {{this.skippedQuestions}}
+    </div>
 </div>
-
-
-<!--Multiplechoice-->
-<div *ngIf="currentQuestion.newid > 12 && currentQuestion.newid <=31">
-    {{currentQuestion}}
-</div>
-
-
-
-
-
-<div>
-    {{currentQuestion.allAnswer}}
-</div>
-
-
-
-<button (click)="nextQuestion(currentQuestion)" style="margin-left: 2%; margin-top: 10px;">Next</button>
-<button (click)="prevQuestion()" style="margin-left:5%; margin-top: 10px;">Prev</button>
-
